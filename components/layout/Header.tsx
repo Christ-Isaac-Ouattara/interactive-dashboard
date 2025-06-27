@@ -1,23 +1,32 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Search, Bell, Moon, Sun, Menu, User, Settings, LogOut } from 'lucide-react';
-import { useTheme } from 'next-themes';
-import { useDashboardStore } from '@/store/dashboardStore';
-import { useNotificationStore } from '@/store/notificationStore';
-import { useAuthStore } from '@/store/authStore';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Badge } from '@/components/ui/badge';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { motion } from "framer-motion";
+import {
+  Search,
+  Bell,
+  Moon,
+  Sun,
+  Menu,
+  User,
+  Settings,
+  LogOut,
+} from "lucide-react";
+import { useTheme } from "next-themes";
+import { useDashboardStore } from "@/store/dashboardStore";
+import { useNotificationStore } from "@/store/notificationStore";
+import { useAuthStore } from "@/store/authStore";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { useRouter } from 'next/navigation';
+} from "@/components/ui/dropdown-menu";
+import { useRouter } from "next/navigation";
 
 export function Header() {
   const { theme, setTheme } = useTheme();
@@ -73,6 +82,7 @@ export function Header() {
             </div>
           </motion.div>
 
+          <div className="flex-1"></div>
           {/* Actions Container */}
           <motion.div
             className="flex justify-end items-center space-x-4"
@@ -202,7 +212,10 @@ export function Header() {
                     className="h-12 px-4 rounded-2xl bg-white/30 dark:bg-gray-800/30 backdrop-blur-sm border border-white/20 dark:border-gray-700/30 shadow-[8px_8px_16px_rgba(0,0,0,0.1),-8px_-8px_16px_rgba(255,255,255,0.1)] dark:shadow-[8px_8px_16px_rgba(0,0,0,0.3),-8px_-8px_16px_rgba(255,255,255,0.02)] hover:shadow-[4px_4px_8px_rgba(0,0,0,0.15),-4px_-4px_8px_rgba(255,255,255,0.15)] transition-all duration-300"
                   >
                     <Avatar className="w-8 h-8 mr-3 ring-2 ring-white/30 dark:ring-gray-700/30">
-                      <AvatarImage src={user?.avatar} />
+                      <AvatarImage
+                        src={user?.avatar}
+                        className="object-cover"
+                      />
                       <AvatarFallback className="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-bold">
                         {user?.name?.charAt(0)}
                       </AvatarFallback>
@@ -220,7 +233,10 @@ export function Header() {
                 <div className="p-4 border-b border-white/10">
                   <div className="flex items-center space-x-3">
                     <Avatar className="w-12 h-12 ring-2 ring-blue-500/30">
-                      <AvatarImage src={user?.avatar} />
+                      <AvatarImage
+                        className="object-cover"
+                        src={user?.avatar}
+                      />
                       <AvatarFallback className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
                         {user?.name?.charAt(0)}
                       </AvatarFallback>
@@ -249,7 +265,10 @@ export function Header() {
                 </DropdownMenuItem>
                 <DropdownMenuSeparator className="bg-white/20 dark:bg-gray-700/30" />
                 <DropdownMenuItem
-                  onClick={() => {logout(); router.push("/");}}
+                  onClick={() => {
+                    logout();
+                    router.push("/");
+                  }}
                   className="p-3 rounded-2xl hover:bg-red-500/10 cursor-pointer text-red-600 dark:text-red-400"
                 >
                   <LogOut className="w-4 h-4 mr-3 text-red-600 dark:text-red-400" />

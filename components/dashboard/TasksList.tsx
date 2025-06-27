@@ -197,7 +197,7 @@ export function TasksList() {
                 </div>
                 
                 {/* Status Line */}
-                <motion.div
+                {/* <motion.div
                   className={cn(
                     "absolute bottom-0 left-0 h-1 rounded-b-2xl",
                     task.status === 'completed' ? "bg-gradient-to-r from-green-400 to-emerald-500" :
@@ -207,7 +207,7 @@ export function TasksList() {
                   initial={{ width: 0 }}
                   animate={{ width: '100%' }}
                   transition={{ delay: index * 0.1 + 0.7, duration: 0.8 }}
-                />
+                /> */}
               </motion.div>
             );
           })}

@@ -16,7 +16,7 @@ export default function DashboardPage() {
         <Header />
         <main className={cn(
           "flex-1 overflow-y-auto p-6",
-          "scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600"
+          "scrollbar-hide scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600"
         )}>
           <div className="max-w-7xl mx-auto">
             <div className="mb-8">

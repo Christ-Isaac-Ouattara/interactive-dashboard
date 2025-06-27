@@ -12,7 +12,7 @@ export function ResponsesChart() {
 
   if (isLoading) {
     return (
-      <div className="col-span-1 lg:col-span-2 relative">
+      <div className=" relative">
         <div className="absolute inset-0 bg-white/10 dark:bg-gray-900/10 backdrop-blur-xl rounded-3xl" />
         <Card className="relative bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 shadow-[20px_20px_40px_rgba(0,0,0,0.1),-20px_-20px_40px_rgba(255,255,255,0.1)] rounded-3xl">
           <CardHeader>
@@ -31,7 +31,7 @@ export function ResponsesChart() {
       initial={{ opacity: 0, scale: 0.9, y: 40 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-      className="col-span-1 lg:col-span-2 relative group"
+      className=" relative group"
     >
       {/* Glassmorphic Background with Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/5 to-transparent dark:from-gray-900/25 dark:via-gray-800/10 dark:to-transparent backdrop-blur-2xl rounded-3xl" />
@@ -80,7 +80,7 @@ export function ResponsesChart() {
               </div>
               
               <div>
-                <CardTitle className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                <CardTitle className="text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                   Évolution des Réponses
                 </CardTitle>
                 <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">

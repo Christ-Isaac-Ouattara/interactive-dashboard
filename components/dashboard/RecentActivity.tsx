@@ -118,7 +118,7 @@ export function RecentActivity() {
                 {/* Avatar with Glassmorphic Effect */}
                 <div className="relative">
                   <Avatar className="w-14 h-14 ring-4 ring-white/30 dark:ring-gray-700/30 shadow-[8px_8px_16px_rgba(0,0,0,0.1),-8px_-8px_16px_rgba(255,255,255,0.1)]">
-                    <AvatarImage src={activity.avatar} />
+                    <AvatarImage className='object-cover' src={activity.avatar} />
                     <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white font-bold text-lg">
                       {activity.user.split(' ').map(n => n[0]).join('')}
                     </AvatarFallback>

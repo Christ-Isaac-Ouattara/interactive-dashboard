@@ -71,35 +71,35 @@ const menuItems = [
     href: "/dashboard/reports",
     gradient: "from-teal-500 to-blue-500",
   },
-  {
-    id: "calendar",
-    label: "Calendrier",
-    icon: Calendar,
-    href: "/dashboard/calendar",
-    gradient: "from-rose-500 to-pink-500",
-  },
-  {
-    id: "messages",
-    label: "Messages",
-    icon: MessageSquare,
-    href: "/dashboard/messages",
-    badge: 3,
-    gradient: "from-yellow-500 to-orange-500",
-  },
-  {
-    id: "notifications",
-    label: "Notifications",
-    icon: Bell,
-    href: "/dashboard/notifications",
-    gradient: "from-violet-500 to-purple-500",
-  },
-  {
-    id: "settings",
-    label: "Paramètres",
-    icon: Settings,
-    href: "/dashboard/settings",
-    gradient: "from-gray-500 to-slate-500",
-  },
+  // {
+  //   id: "calendar",
+  //   label: "Calendrier",
+  //   icon: Calendar,
+  //   href: "/dashboard/calendar",
+  //   gradient: "from-rose-500 to-pink-500",
+  // },
+  // {
+  //   id: "messages",
+  //   label: "Messages",
+  //   icon: MessageSquare,
+  //   href: "/dashboard/messages",
+  //   badge: 3,
+  //   gradient: "from-yellow-500 to-orange-500",
+  // },
+  // {
+  //   id: "notifications",
+  //   label: "Notifications",
+  //   icon: Bell,
+  //   href: "/dashboard/notifications",
+  //   gradient: "from-violet-500 to-purple-500",
+  // },
+  // {
+  //   id: "settings",
+  //   label: "Paramètres",
+  //   icon: Settings,
+  //   href: "/dashboard/settings",
+  //   gradient: "from-gray-500 to-slate-500",
+  // },
 ];
 
 export function Sidebar() {
@@ -116,7 +116,7 @@ export function Sidebar() {
         width: sidebarCollapsed ? 100 : 260,
         transition: { duration: 0.5, ease: "easeInOut" },
       }}
-      className="relative h-screen flex flex-col overflow-hidden"
+      className="relative h-screen flex flex-col overflow-hidden "
     >
       {/* Glassmorphism Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent dark:from-gray-900/20 dark:via-gray-800/10 dark:to-transparent backdrop-blur-2xl" />
@@ -197,7 +197,7 @@ export function Sidebar() {
 
             <div className="relative">
               <Avatar className="w-14 h-14 ring-4 ring-white/30 dark:ring-gray-700/30 shadow-[8px_8px_16px_rgba(0,0,0,0.1),-8px_-8px_16px_rgba(255,255,255,0.1)] dark:shadow-[8px_8px_16px_rgba(0,0,0,0.3),-8px_-8px_16px_rgba(255,255,255,0.02)]">
-                <AvatarImage src={user?.avatar} />
+                <AvatarImage className='object-cover' src={user?.avatar} />
                 <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-lg font-bold">
                   {user?.name?.charAt(0)}
                 </AvatarFallback>
@@ -234,7 +234,7 @@ export function Sidebar() {
         </motion.div> */}
 
         {/* Navigation Menu */}
-        <nav className="flex-1 p-2 space-y-2 overflow-y-auto scrollbar-hide">
+        <nav className="flex-1 p-2 space-y-2 overflow-y-auto scrollbar-hide scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600">
           {menuItems.map((item, index) => {
             const isActive = pathname === item.href;
             const showBadge =
